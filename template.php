@@ -1,0 +1,505 @@
+<?php  
+
+# php config file
+include ('includes/config.inc.php');
+
+# local / page variables
+$page_title = 'Hexlia Template Page';
+$page_description = "This is the $page_title page. It doesn't do anything parculiar.";
+
+include ('includes/head.inc.php');
+
+
+?>
+
+
+
+  <!-- Shopping Cart Template
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <section id="shopping-cart" class="section">
+    <div class="container">
+      <div class="row section-header">
+        <h2 class="section-title">Shopping Cart</h2>
+      </div>
+      
+      <form id="" name="" action="" class="">
+        <div class="row">
+          <div class="six columns">
+            <button class="button-primary">Conintue shopping</button>
+            <button class="button">Clear Cart</button>
+          </div>
+          
+          <div class="six columns">
+            <button class="button-primary">Recalculate</button> 
+            <button class="button">Proceed to checkout &rarr;</button>
+          </div>
+        </div>
+      </form>
+      
+      <div class="row">
+        <div class="twelve columns">
+          
+          <table class="u-full-width">
+            <thead>
+              <colgroup>
+                <col style="width: 60%;">
+              </colgroup>
+              <tr>
+                <th>Product</th>
+                <th>Unit price</th>
+                <th>Quantity</th>
+                <th>Total price</th>
+              </tr>
+            </thead>
+            <tbody>
+              <form action="" method="" id="" class="" accept-charset="UTF-8">
+                <tr>
+                  <td>
+                    <div class="cart-item_info u-cf">
+                      <a href="#" title="">
+                        <img src="//placeholdit.imgix.net/~text?txtsize=19&txt=200%C3%97200&w=200&h=200" alt="" width="200px" height="200px" class="" />
+                      </a>
+                      <div class="cart-item_details">
+                        <h3><a href="">This product</a></h3>
+                        <span>Code: #909090901</span>
+                      </div>
+                    </div>
+                  </td>
+                  <td>$26.00</td>
+                  <td>
+                    <input type="number" name="quantity" min="0" max="5" value="1" />
+                  </td>
+                  <td>$499.99</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="cart-item_info u-cf">
+                      <a href="#" title="">
+                        <img src="//placeholdit.imgix.net/~text?txtsize=19&txt=200%C3%97200&w=200&h=200" alt="" width="200px" height="200px" class="" />
+                      </a>
+                      <div class="cart-item_details">
+                        <h3><a href="">This product</a></h3>
+                        <span>Code: #909090901</span>
+                      </div>
+                    </div>
+                  </td>
+                  <td>$26.00</td>
+                  <td>
+                    <input type="number" name="quantity" min="0" max="5" value="1" />
+                  </td>
+                  <td>$499.99</td>
+                </tr>
+              </form>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      
+      <div class="row">
+        <table class="u-full-width cart-total">
+          <colgroup>
+            <col style="width: 60%;">
+          </colgroup>
+          <tr>
+            <td>Apply Coupon</td>
+            <td>Subtotal</td>
+            <td>$499.99</td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td>
+            <td>Shipping cost</td>
+            <td><a href="#">Calculate</a></td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td>
+            <td>Total cost</td>
+            <td><strong>$499.99</strong></td>
+          </tr>
+        </table>
+      </div>
+      
+      <form id="" name="" action="" class="">
+        <div class="row">
+          <div class="six columns">
+            <button class="button-primary">Conintue shopping</button>
+          </div>
+          
+          <div class="six columns text-right">
+            <button class="button-primary">Recalculate</button> 
+            <button class="button">Proceed to checkout &rarr;</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+
+
+  <!-- Demo Text Effects 
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <section id="demo-text" class="section">
+    <div class="container">
+      <div class="row section-header">
+        <h2 class="section-title">Demo Text Effects</h2>
+      </div>
+      <div class="row">
+        <p class="text-success">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia soluta nesciunt eaque, facilis illo illum laborum obcaecati deleniti sint odio at quam. Unde ducimus, nostrum ratione maiores, deserunt perspiciatis aperiam!</p>
+        <p class="text-info">Accusantium perferendis ipsam nihil dolores ducimus nam impedit possimus, quo laborum deserunt esse facere repudiandae atque magni illum sunt amet ea sapiente consequatur. Molestias minus sequi, facilis. Adipisci, aliquid, accusantium.</p>
+        <p class="text-warning">Molestiae accusamus cum molestias, possimus reprehenderit unde, mollitia blanditiis laboriosam numquam, hic voluptatem vero. Aut veritatis debitis voluptatibus dolor vitae enim labore quas nobis nesciunt sapiente. Aut praesentium ullam temporibus.</p>
+        <p class="text-error">Fuga laboriosam, aperiam minus sapiente non repudiandae eum excepturi officiis vitae! Earum quaerat doloremque, voluptatum dolores, dolorum et assumenda? Quae est dicta architecto soluta cumque expedita dolores repellendus nisi totam!</p>
+        <div class="alert alert-success" role="alert">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae vitae distinctio veniam reprehenderit accusantium at amet similique, maiores placeat natus perferendis voluptate delectus facilis, voluptas, doloremque architecto. Id, cupiditate
+          debitis.
+        </div>
+        <div class="alert alert-info" role="alert">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim, temporibus praesentium magni cumque nemo non libero quo amet, repellendus mollitia dicta, repellat adipisci explicabo excepturi! Quos libero, pariatur corrupti architecto.</div>
+        <div class="alert alert-warning" role="alert">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem atque, non commodi voluptatem, blanditiis, minima neque fuga unde quod veniam officia. Eaque fugit est eius, quaerat similique, quasi explicabo placeat.</div>
+        <div class="alert alert-error" role="alert">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias eveniet amet, omnis quibusdam voluptatem similique aliquam, officiis exercitationem placeat sapiente earum provident, asperiores perferendis autem debitis! Nam commodi accusamus alias!</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Customer Profile Template
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <section id="profile" class="section">
+    <div class="container">
+      <div class="row section-header">
+        <!-- js randomize noun -->
+        <h2 class="section-title">Hello <span class="text-muted">Customer</span>.</h2>
+      </div>
+
+      <div class="row">
+        <div class="five columns">
+          <pre>Your Order Status</pre>
+          <meter class="u-full-width" min="0" max="100" value="80"></meter>
+        </div>
+        <div class="seven columns">
+          <h3>Your Information</h3>
+          <!--<img src="//placeholdit.imgix.net/~text?txtsize=47&txt=image&w=250&h=250" alt="" class="u-full-width avatar-image" />
+          <p>
+            <a href="#">Edit Avatar.</a>
+          </p>-->
+          <table class="u-full-width">
+            <tbody>
+              <tr>
+                <td><strong>First Name</strong></td>
+                <td>Lorem</td>
+              </tr>
+              <tr>
+                <td><strong>Last Name</strong></td>
+                <td>Lorain</td>
+              </tr>
+              <tr>
+                <td><strong>Customer ID</strong></td>
+                <td>Cust#90102389</td>
+              </tr>
+              <tr>
+                <td><strong>Status</strong></td>
+                <td><span class="text-success">Active <i class="fa fa-check-circle"></i></span></td>
+              </tr>
+              <tr>
+                <td><strong>Last Seen</strong></td>
+                <td>
+                  <timedate>12:45:07 PM EST</timedate>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Description</strong></td>
+                <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis soluta, error cumque? Ut eos mollitia natus dignissimos nisi cumque ducimus veritatis, eveniet laborum facilis. Officia eveniet, sit voluptas cumque voluptatum.</td>
+              </tr>
+            </tbody>
+          </table>
+          <form action="" class="">
+            <button class="button">Edit Profile</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Demo Section Template
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <section id="demo" class="section">
+    <div class="container">
+      <div class="row section-header">
+        <h2 class="section-title">Section Title</h2>
+      </div>
+      <div class="row">
+        <p>
+          <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga amet quae ducimus sed quasi itaque architecto recusandae aspernatur nihil excepturi, non id maiores officia repellat debitis tempore, velit sunt voluptatibus.</span>
+          <span>Deleniti eum ut cupiditate vel autem itaque, quibusdam nam earum aliquam ipsum obcaecati dicta, mollitia doloremque pariatur dolore quisquam a molestias sed corporis nulla voluptatem quam debitis harum. Alias, odio.</span>
+          <span>Aspernatur nesciunt maxime in expedita quod vitae officia quo, incidunt minima voluptatibus consequuntur at iure sit sunt, non veritatis quidem maiores dicta deserunt adipisci alias nobis! Sint similique ullam illo.</span>
+          <span>Ducimus quaerat enim saepe blanditiis nulla asperiores, inventore vel laborum dolor, officia facere ut itaque explicabo. Soluta, quis maiores commodi sapiente voluptate, amet repudiandae. Libero voluptates neque ad ducimus porro!</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Catalog Template
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <section id="catalog" class="section">
+    <div class="container">
+      <div class="row section-header">
+        <h2 class="section-title">Catalog</h2>
+      </div>
+
+      <div class="row">
+        <ul class="catalog-list u-cf">
+          <li class="four columns catalog-item panel">
+            <!-- product image -->
+            <a href="#">
+              <img src="//s3-us-west-2.amazonaws.com/s.cdpn.io/307033/10.jpg" alt="" class="u-max-full-width" />
+            </a>
+            <div class="catalog-item_detail">
+              <h3 class="catalog-item_name">
+                <a href="#">3 Month Subscription</a>
+              </h3>
+              <div class="price-tag">
+                <span class="old-price">$55.00</span> <strong class="new-price"><sup>$</sup>49.99</strong>
+              </div>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione consequatur temporibus asperiores, qui ipsa ab eius, laborum.</p>
+              <p>
+                <button class="button-primary u-full-width">Product Page</button>
+              </p>
+              <ul class="stats u-full-width">
+                <li><a href="#">1,056 <span>Likes</span></a></li>
+                <li><a href="#">5 <i class="fa fa-star"></i> <span>Rating</span></a></li>
+                <li><a href="#">316 <span>Reviews</span></a></li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="four columns catalog-item panel">
+            <!-- product image -->
+            <a href="#">
+              <img src="//s3-us-west-2.amazonaws.com/s.cdpn.io/307033/10.jpg" alt="" class="u-max-full-width" />
+            </a>
+            <div class="catalog-item_detail">
+              <h3 class="catalog-item_name">
+                <a href="#">3 Month Subscription</a>
+              </h3>
+              <div class="price-tag">
+                <span class="old-price">$55.00</span> <strong class="new-price"><sup>$</sup>49.99</strong>
+              </div>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione consequatur temporibus asperiores, qui ipsa ab eius, laborum.</p>
+              <p>
+                <button class="button-primary u-full-width">Product Page</button>
+              </p>
+              <ul class="stats u-full-width">
+                <li><a href="#">1,056 <span>Likes</span></a></li>
+                <li><a href="#">5 <i class="fa fa-star"></i> <span>Rating</span></a></li>
+                <li><a href="#">316 <span>Reviews</span></a></li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="four columns catalog-item panel">
+            <!-- product image -->
+            <a href="#">
+              <img src="//s3-us-west-2.amazonaws.com/s.cdpn.io/307033/10.jpg" alt="" class="u-max-full-width" />
+            </a>
+            <div class="catalog-item_detail">
+              <h3 class="catalog-item_name">
+                <a href="#">3 Month Subscription</a>
+              </h3>
+              <div class="price-tag">
+                <span class="old-price">$55.00</span> <strong class="new-price"><sup>$</sup>49.99</strong>
+              </div>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione consequatur temporibus asperiores, qui ipsa ab eius, laborum.</p>
+              <p>
+                <button class="button-primary u-full-width">Product Page</button>
+              </p>
+              <ul class="stats u-full-width">
+                <li><a href="#">1,056 <span>Likes</span></a></li>
+                <li><a href="#">5 <i class="fa fa-star"></i> <span>Rating</span></a></li>
+                <li><a href="#">316 <span>Reviews</span></a></li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="four columns catalog-item panel">
+            <!-- product image -->
+            <a href="#">
+              <img src="//s3-us-west-2.amazonaws.com/s.cdpn.io/307033/10.jpg" alt="" class="u-max-full-width" />
+            </a>
+            <div class="catalog-item_detail">
+              <h3 class="catalog-item_name">
+                <a href="#">3 Month Subscription</a>
+              </h3>
+              <div class="price-tag">
+                <span class="old-price">$55.00</span> <strong class="new-price"><sup>$</sup>49.99</strong>
+              </div>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione consequatur temporibus asperiores, qui ipsa ab eius, laborum.</p>
+              <p>
+                <button class="button-primary u-full-width">Product Page</button>
+              </p>
+              <ul class="stats u-full-width">
+                <li><a href="#">1,056 <span>Likes</span></a></li>
+                <li><a href="#">5 <i class="fa fa-star"></i> <span>Rating</span></a></li>
+                <li><a href="#">316 <span>Reviews</span></a></li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="four columns catalog-item panel">
+            <!-- product image -->
+            <a href="#">
+              <img src="//s3-us-west-2.amazonaws.com/s.cdpn.io/307033/10.jpg" alt="" class="u-max-full-width" />
+            </a>
+            <div class="catalog-item_detail">
+              <h3 class="catalog-item_name">
+                <a href="#">3 Month Subscription</a>
+              </h3>
+              <div class="price-tag">
+                <span class="old-price">$55.00</span> <strong class="new-price"><sup>$</sup>49.99</strong>
+              </div>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione consequatur temporibus asperiores, qui ipsa ab eius, laborum.</p>
+              <p>
+                <button class="button-primary u-full-width">Product Page</button>
+              </p>
+              <ul class="stats u-full-width">
+                <li><a href="#">1,056 <span>Likes</span></a></li>
+                <li><a href="#">5 <i class="fa fa-star"></i> <span>Rating</span></a></li>
+                <li><a href="#">316 <span>Reviews</span></a></li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="four columns catalog-item panel">
+            <!-- product image -->
+            <a href="#">
+              <img src="//s3-us-west-2.amazonaws.com/s.cdpn.io/307033/10.jpg" alt="" class="u-max-full-width" />
+            </a>
+            <div class="catalog-item_detail">
+              <h3 class="catalog-item_name">
+                <a href="#">3 Month Subscription</a>
+              </h3>
+              <div class="price-tag">
+                <span class="old-price">$55.00</span> <strong class="new-price"><sup>$</sup>49.99</strong>
+              </div>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione consequatur temporibus asperiores, qui ipsa ab eius, laborum.</p>
+              <p>
+                <button class="button-primary u-full-width">Product Page</button>
+              </p>
+              <ul class="stats u-full-width">
+                <li><a href="#">1,056 <span>Likes</span></a></li>
+                <li><a href="#">5 <i class="fa fa-star"></i> <span>Rating</span></a></li>
+                <li><a href="#">316 <span>Reviews</span></a></li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="four columns catalog-item panel">
+            <!-- product image -->
+            <a href="#">
+              <img src="//s3-us-west-2.amazonaws.com/s.cdpn.io/307033/10.jpg" alt="" class="u-max-full-width" />
+            </a>
+            <div class="catalog-item_detail">
+              <h3 class="catalog-item_name">
+                <a href="#">3 Month Subscription</a>
+              </h3>
+              <div class="price-tag">
+                <span class="old-price">$55.00</span> <strong class="new-price"><sup>$</sup>49.99</strong>
+              </div>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione consequatur temporibus asperiores, qui ipsa ab eius, laborum.</p>
+              <p>
+                <button class="button-primary u-full-width">Product Page</button>
+              </p>
+              <ul class="stats u-full-width">
+                <li><a href="#">1,056 <span>Likes</span></a></li>
+                <li><a href="#">5 <i class="fa fa-star"></i> <span>Rating</span></a></li>
+                <li><a href="#">316 <span>Reviews</span></a></li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="four columns catalog-item panel">
+            <!-- product image -->
+            <a href="#">
+              <img src="//s3-us-west-2.amazonaws.com/s.cdpn.io/307033/10.jpg" alt="" class="u-max-full-width" />
+            </a>
+            <div class="catalog-item_detail">
+              <h3 class="catalog-item_name">
+                <a href="#">3 Month Subscription</a>
+              </h3>
+              <div class="price-tag">
+                <span class="old-price">$55.00</span> <strong class="new-price"><sup>$</sup>49.99</strong>
+              </div>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione consequatur temporibus asperiores, qui ipsa ab eius, laborum.</p>
+              <p>
+                <button class="button-primary u-full-width">Product Page</button>
+              </p>
+              <ul class="stats u-full-width">
+                <li><a href="#">1,056 <span>Likes</span></a></li>
+                <li><a href="#">5 <i class="fa fa-star"></i> <span>Rating</span></a></li>
+                <li><a href="#">316 <span>Reviews</span></a></li>
+              </ul>
+            </div>
+          </li>
+
+
+        </ul>
+      </div>
+      <!-- pagination here -->
+    </div>
+  </section>
+
+
+  <!-- Sign In Template
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <section id="signin" class="section">
+    <div class="container">
+      <div class="row section-header">
+        <h2 class="section-title">Sign In</h2>
+      </div>
+
+      <form action="" method="">
+        <div class="row">
+          <div class="six columns offset-by-three panel">
+
+            <div class="">
+              <label for="user_email">Your Email</label>
+              <input class="u-full-width" type="email" placeholder="test@mailbox.com" name="user_email">
+            </div>
+            <div class="">
+              <label for="user_pass">Your Password</label>
+              <input class="u-full-width" type="password" name="user_pass">
+            </div>
+            <div class="">
+              <input class="u-full-width button-primary" type="submit" name="submit_form">
+            </div>
+            <div class="">
+              <input class="u-full-width" type="reset" name="reset_form">
+            </div>
+            <p>
+              <a href="#">Forgot</a> your password? Want to <a href="#">Register</a>?
+            </p>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<?php  
+
+include ('includes/footer.inc.php');
