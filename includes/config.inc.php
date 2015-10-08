@@ -25,11 +25,9 @@
 // $DBpassword = 'knights4321';
 // $dbname     = 'hexia_db_2';
 
-$db_servername = "sulley.cah.ucf.edu";
-// variable
-$db_username = "ty271781";
-// variables
-$db_name = "ty271781";
-$db_password = "732FDD2702D5412B822FE5FCD1217A66";
+$db_servername = 'sulley.cah.ucf.edu';
+$db_username = 'ty271781';
+$db_name = 'ty271781';
+$db_password = '732FDD2702D5412B822FE5FCD1217A66';
 
 

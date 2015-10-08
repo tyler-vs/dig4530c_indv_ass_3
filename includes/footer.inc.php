@@ -4,7 +4,7 @@
 
       <div class="row">
 
-        <div class="four columns">
+        <div class="six columns">
           <h3>Address</h3>
           <address>
             <strong>Hexia, Inc.</strong><br>
@@ -18,16 +18,16 @@
           </p>
         </div>
 
-        <div class="four columns">
+        <!-- <div class="four columns">
           <button class="button-primary">FAQ / Terms</button>
-        </div>
+        </div> -->
 
-        <div class="four columns">
+        <div class="six columns">
           <h3>Join Newsletter</h3>
           <form>
             <div>
-              <label for="exampleInputEmail2">Email</label>
-              <input type="email" class="form-control" id="exampleInputEmail2" placeholder="your email address" />
+              <label for="">Email</label>
+              <input type="email" class="u-full-width" id="" name="" placeholder="" />
             </div>
             <button type="submit" class="button-primary">Join!</button>
           </form>
@@ -35,7 +35,7 @@
       </div>
       <div class="row">
         <div class="twelve columns">
-          <p class="copyright text-center">&copy; 2015. Disclaimer: This site is not official and is an assignment for a UCF Digital Media course. designed by <a href="">tyler van schaick</a>.</p>
+          <p class="copyright text-center">This site is not official and is an assignment for a UCF Digital Media course. designed by <a href="">tyler van schaick</a>.</p>
         </div>
       </div>
     </div>

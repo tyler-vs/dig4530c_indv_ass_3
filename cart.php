@@ -1,15 +1,55 @@
 <?php  
 
-# php config file
-include ('includes/config.inc.php');
+/**
+ *  cart.php
+ *
+ *  cart will show all the products that a signed in 
+ *  user has acquired in their online shopping experience
+ * 
+ */
 
-# local / page variables
+
+/** 
+ * contains general variables and baseURL variables
+ * to help ease site navigation linking.
+ */
+include 'includes/setup.inc.php';
+
+
+/* 
+*   variables to connect to sulley servers
+*   to grab database items.
+*/
+include 'includes/config.inc.php';
+
+
+/**
+ * after database connect we can run a query for the page
+ */
+
+// mysql db connection
+$mysqli = mysqli_connect($db_servername, $db_username, $db_password, $db_name);
+
+// conditional, output an error message if cannot connect to 
+// database.
+if (mysqli_connect_errno()) {
+  // print error message using error css classes
+  echo '<div class="alert alert-error">Failed to connect to mysql: ' . mysqli_connect_error() . '</div>';
+  // exit out of php code.
+  exit();
+}
+
+
+
+/**
+ * local page variables
+ */
 $page_title = 'Shopping Cart';
-$page_description = "This is the $page_title demo page. Yay shopping!";
 
+/**
+ * grab header html part
+ */
 include ('includes/head.inc.php');
-
-// html5 checked
 
 ?>
 
@@ -21,7 +61,7 @@ include ('includes/head.inc.php');
     <div class="container">
 
       <div class="row section-header">
-        <h2 class="section-title">Shopping Cart</h2>
+        <h2 class="section-title"><?php echo $page_title; ?></h2>
       </div>
       
       <form>
@@ -43,52 +83,44 @@ include ('includes/head.inc.php');
           <thead>
             <tr>
               <th>Product</th>
-              <th>Unit price</th>
+              <th>MSRP price</th>
               <th>Quantity</th>
               <th>Total price</th>
             </tr>
           </thead>
           <tbody>
-              <tr>
-                <td>
-                  <div class="cart-item_info u-cf">
-                    <a href="#" title="">
-                      <img src="//s3-us-west-2.amazonaws.com/s.cdpn.io/307033/10.jpg" alt="" class="" />
-                    </a>
-                    <div class="cart-item_details">
-                      <h3><a href="">This product</a></h3>
-                      <span>Code: #909090901</span>
-                    </div>
-                  </div>
-                </td>
-                <td>$26.00</td>
-                <td>
-                  <form>
-                    <input type="number" name="quantity" min="0" max="5" value="1" />
-                  </form>
-                </td>
-                <td>$499.99</td>
-              </tr>
-              <tr>
-                <td>
-                  <div class="cart-item_info u-cf">
-                    <a href="#" title="">
-                      <img src="//s3-us-west-2.amazonaws.com/s.cdpn.io/307033/10.jpg" alt="" class="" />
-                    </a>
-                    <div class="cart-item_details">
-                      <h3><a href="">This product</a></h3>
-                      <span>Code: #909090901</span>
-                    </div>
-                  </div>
-                </td>
-                <td>$26.00</td>
-                <td>
-                  <form>
-                    <input type="number" name="quantity" min="0" max="5" value="1" />
-                  </form>
-                </td>
-                <td>$499.99</td>
-              </tr>
+              
+              <?php  
+
+                if ($result = mysqli_query($mysqli, "SELECT * FROM `products_demo` LIMIT 4")) {
+
+                  while( $row = mysqli_fetch_assoc($result) ) {
+                    echo '<tr>
+                          <td>
+                            <div class="cart-item_info u-cf">
+                              <a href="#" title="">
+                                <img src="img/products/' . $row['Image'] . '" alt="" class="" />
+                              </a>
+                              <div class="cart-item_details">
+                                <h3><a href="product.php?' . $row['Id'] . '">' . $row['Name'] . '</a></h3>
+                                <span>Sku: #' . $row['Sku'] . '</span>
+                              </div>
+                            </div>
+                          </td>
+                          <td>' . $row['MSRP'] . '</td>
+                          <td>
+                            <form>
+                              <input type="number" name="quantity" min="0" max="' . $row['Stock'] . '" value="1" />
+                            </form>
+                          </td>
+                          <td>' . $row['SalePrice'] . '</td>
+                        </tr>';
+                  }
+                } else {
+                  echo '<div class="alert alert-error">Sorry your shopping cart is empty or sql error occurred.</div>';
+                }
+
+              ?>
           </tbody>
         </table>
       </div>
@@ -133,4 +165,13 @@ include ('includes/head.inc.php');
 
 <?php  
 
+/**
+ * close connection
+ */
+mysqli_close($mysqli);
+
+
+/**
+ * add footer html
+ */
 include ('includes/footer.inc.php');

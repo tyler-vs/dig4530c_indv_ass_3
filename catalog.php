@@ -1,29 +1,54 @@
 <?php  
 
-# =========================================
-# 
-# name:     catalog.php
-# 
-# =========================================
-# 
-# purpose:  a page that shows all available 
-#           items in the `products` table.
-#           
-#           
-# 
-# ========================================= #/
-
-# php config file
-include ('includes/config.inc.php');
+/**
+ *  catalog.php
+ *
+ *  this page will output all the inventory
+ *  from the products_demo database.
+ * 
+ */
 
 
+/** 
+ * contains general variables and baseURL variables
+ * to help ease site navigation linking.
+ */
+include 'includes/setup.inc.php';
+
+
+/* 
+*   variables to connect to sulley servers
+*   to grab database items.
+*/
+include 'includes/config.inc.php';
+
+
+/**
+ * after database connect we can run a query for the page
+ */
+
+// mysql db connection
+$mysqli = mysqli_connect($db_servername, $db_username, $db_password, $db_name);
+
+// conditional, output an error message if cannot connect to 
+// database.
+if (mysqli_connect_errno()) {
+  // print error message using error css classes
+  echo '<div class="alert alert-error">Failed to connect to mysql: ' . mysqli_connect_error() . '</div>';
+  // exit out of php code.
+  exit();
+}
 
 
 
-
-# local / page variables
+/**
+ * local page variables
+ */
 $page_title = 'Catalog';
 
+/**
+ * grab header html part
+ */
 include ('includes/head.inc.php');
 
 ?>
@@ -42,23 +67,26 @@ include ('includes/head.inc.php');
 
           <?php  
 
-          $result = mysqli_query($mysqli, "SELECT * FROM `products`");
+          
 
           // $row = mysqli_fetch_assoc($result);
+
+          if ($result = mysqli_query($mysqli, "SELECT * FROM `products_demo`")) {
+
 
 
           while( $row = mysqli_fetch_assoc($result) ) {
             echo '<li class="four columns catalog-item panel">
               <!-- product image -->
               <a href="product.php?' . $row['Id'] . '">
-                <img src="' . $row['Image'] . '" alt="" class="u-max-full-width" />
+                <img src="img/products/' . $row['Image'] . '" alt="" class="u-max-full-width" />
               </a>
               <div class="catalog-item_detail">
                 <div>
                   <a href="product.php?' . $row['Id'] . '"> ' . $row['Name'] . '</a>
                 </div>
                 <div class="price-tag">
-                  <span class="old-price"> $' . $row['MSRP'] . '</span> <strong class="new-price"> $' . $row['Sale'] . '</strong>
+                  <span class="old-price"> $' . $row['SalePrice'] . '</span> <strong class="new-price"> $' . $row['MSRP'] . '</strong>
                 </div>
                 <p>' . $row['Description'] .' <a href="product.php?' . $row['Id'] . '">Product Page</a>.</p>
                 <ul class="stats u-full-width">
@@ -68,6 +96,9 @@ include ('includes/head.inc.php');
                 </ul>
               </div>
             </li>';  
+            }
+          } else {
+            echo '<div class="alert alert-error">Sorry no items to display</div>';
           }
 
           ?>
@@ -107,7 +138,13 @@ include ('includes/head.inc.php');
 
 <?php  
 
-# close connection
+/**
+ * close connection
+ */
 mysqli_close($mysqli);
 
+
+/**
+ * add footer html
+ */
 include ('includes/footer.inc.php');

@@ -1,47 +1,57 @@
 <?php  
+/**
+ *  login.php
+ *
+ *  login page allows you to access db 
+ *  functionalities depending on user type.
+ *
+ */
 
-
-# =========================================
-# 
-# name:     login.php
-# 
-# =========================================
-# 
-# purpose:  login page for basic user, Not admin.
-# 
-# 
-# how it works:
-# 
-#   - grab `session` file which should be included first
-#   on the page the grab $_SESSION variables like admin 
-#   authentication.
-#   
-#   - grab `configure` file that sets up global variable
-#   names. 
-#   
-#   - grab the header html file that contains login links
-#   and search functionality.
-#           
-#           
-# 
-# =========================================
-
-// useful variables and functions
+/** 
+ * contains general variables and baseURL variables
+ * to help ease site navigation linking.
+ */
 include 'includes/setup.inc.php';
-// session functions
-include 'includes/session.inc.php';
-// conenct to db variables
+
+
+/* 
+*   variables to connect to sulley servers
+*   to grab database items.
+*/
 include 'includes/config.inc.php';
 
-// page variables
+
+/**
+ * after database connect we can run a query for the page
+ */
+
+// mysql db connection
+// $mysqli = mysqli_connect($db_servername, $db_username, $db_password, $db_name);
+
+// conditional, output an error message if cannot connect to 
+// database.
+// if (mysqli_connect_errno()) {
+//   // print error message using error css classes
+//   echo '<div class="alert alert-error">Failed to connect to mysql: ' . mysqli_connect_error() . '</div>';
+//   // exit out of php code.
+//   exit();
+// } 
+// else {
+//   echo '<div class="alert alert-info">Connected to sulley db!</div>';
+// }
+
+
+
+/**
+ * local page variables
+ */
 $page_title = 'Sign in';
 
-// head html
-include 'includes/head.inc.php';
+/**
+ * grab header html part
+ */
+include ('includes/head.inc.php');
 
-
-// this login page will redirect to itself when
-// validating.
 
 
 ?>
@@ -102,4 +112,12 @@ include 'includes/head.inc.php';
 
 <?php
 
-include 'includes/footer.inc.php';
+/**
+ * close connection
+ */
+// mysqli_close($mysqli);
+
+/**
+ * add footer html
+ */
+include ('includes/footer.inc.php');

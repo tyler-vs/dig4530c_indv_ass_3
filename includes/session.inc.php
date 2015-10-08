@@ -1,5 +1,6 @@
 <?php 
-/* SESSION .PHP
+
+/* session.inc.php
 * 
 * this file is to be included on pages were
 * the user is expected to have already started
@@ -8,7 +9,7 @@
 */ 
 
 
-require 'connect.inc.php';
+// require 'connect.inc.php';
 
 
 

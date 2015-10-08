@@ -36,43 +36,34 @@ include 'includes/config.inc.php';
  */
 
 // mysql db connection
-$mysqli = mysqli_connect("$db_servername", "$db_username", "$db_password", "$db_name");
+$mysqli = mysqli_connect($db_servername, $db_username, $db_password, $db_name);
 
 // conditional, output an error message if cannot connect to 
 // database.
 if (mysqli_connect_errno()) {
-  echo '<div class="alert alert-error"> Failed to connect to mysql: ' . mysqli_connect_error() . '</div>';
-}
+  // print error message using error css classes
+  echo '<div class="alert alert-error">Failed to connect to mysql: ' . mysqli_connect_error() . '</div>';
+  // exit out of php code.
+  exit();
+} 
+// else {
+//   echo '<div class="alert alert-info">Connected to sulley db!</div>';
+// }
 
 
 
-/*
-*   local / page variables
-*/
+/**
+ * local page variables
+ */
 $page_title = 'Homepage';
 
-/*    head .html
-*/
+/**
+ * grab header html part
+ */
 include ('includes/head.inc.php');
 
 
 ?>
-
-  
-  <section id="demo-welcome" class="section">
-    <div class="container">
-      <div class="row section-header">
-        <h2 class="section-title"><?php echo $page_title; ?></h2>
-      </div>
-      <div class="row">
-        <p>
-          <strong>Welcome to Hexia Monthly Subscriptions!</strong><br>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga amet quae ducimus sed quasi itaque architecto recusandae aspernatur nihil excepturi, non id maiores officia repellat debitis tempore, velit sunt voluptatibus.
-        </p>
-        <p><button class="button-primary">Demo</button></p>
-      </div>
-    </div>
-  </section>
 
 
   <!-- Featured Item Template
@@ -85,9 +76,20 @@ include ('includes/head.inc.php');
 
       <?php  
 
-      if ( $result = mysqli_query($mysqli, "SELECT * FROM `products` WHERE Featured=1 LIMIT 1")) { 
+      /**
+       * run a sql query to grab the featured item, 
+       * this query is a demo and will instead limit itself
+       * to grab just one product to demo the featured item.
+       */
+      
 
-        if ( $row = mysqli_fetch_assoc($result) ) {
+      // generate the query with the `$result` variables
+
+      if ( $result = mysqli_query($mysqli, "SELECT * FROM `products_demo` WHERE Featured=1 LIMIT 1")) { 
+
+        // if a result exists then output that data into 
+        // this html template for featured item(s).
+        while ( $row = mysqli_fetch_assoc($result) ) {
           echo '
             <div class="row">
               <div class="seven columns featured-item">
@@ -95,12 +97,12 @@ include ('includes/head.inc.php');
                 <p>' . $row['Description'] . ' <a href="product.php?' . $row['Id'] . '">See Product Specs</a>.
                 </p>
                 <p>
-                  <span class="old-price"> $' . $row['MSRP'] . '</span> <strong class="new-price"> $' . $row['Sale'] . '</strong>
+                  <span class="old-price">' . $row['SalePrice'] . '</span> <strong class="new-price"> $' . $row['MSRP'] . '</strong>
                 </p>
               </div>
               <div class="five columns">
                 <a href="product.php?' . $row['Id'] . '">
-                  <img src="' . $row['Image'] . '" alt="an image of a cool product." class="u-max-full-width" />
+                  <img src="img/products/' . $row['Image'] . '" alt="an image of a cool product." class="u-max-full-width" />
                 </a>
               </div>
             </div>';
@@ -108,9 +110,11 @@ include ('includes/head.inc.php');
 
         } 
       } else {
+        /**
+         * if an error occurs then we output an error message
+         */
         echo '<div class="alert alert-error">No Featured Items.</div>';
       }
-
 
       ?>
       
@@ -118,7 +122,29 @@ include ('includes/head.inc.php');
   </section>
 
 
+  <section id="demo-welcome" class="section">
+    <div class="container">
+      <div class="row section-header">
+        <h2 class="section-title"><?php echo $page_title; ?></h2>
+      </div>
+      <div class="row">
+        <p>
+          <strong>Welcome to Hexia Monthly Subscriptions!</strong><br>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga amet quae ducimus sed quasi itaque architecto recusandae aspernatur nihil excepturi, non id maiores officia repellat debitis tempore, velit sunt voluptatibus.
+        </p>
+      </div>
+    </div>
+  </section>
+
+
 <?php
 
+/**
+ * close connection
+ */
+mysqli_close($mysqli);
 
+/**
+ * add footer html
+ */
 include ('includes/footer.inc.php');

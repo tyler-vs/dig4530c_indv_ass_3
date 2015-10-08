@@ -1,6 +1,9 @@
 @charset "UTF-8";
 /* info
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
+/*@import "normalize.css";*/
+/*@import "http://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css";*/
+/*@import "http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css";*/
 /* variables
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 /* Mobile first queries */
@@ -151,8 +154,8 @@ input[type=button] {
 
 .catalog-item {
   position: relative;
-  /*overflow: hidden;*/
-  /*height: 320px;*/
+  overflow: hidden;
+  height: 620px;
   /* override panel class attrs. */
   padding: 5px;
   margin-bottom: 15px;

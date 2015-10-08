@@ -1,31 +1,56 @@
 <?php  
 
-
 /**
  *  fullfillment.php
- * 
- * this page is where the user is redirected after 
- * a order is fullfilled, it simply assures the customer that
- * their order wnet through successfully.
+ *
+ *  this page is where the user is redirected after 
+ *  a order is fullfilled, it simply assures the customer that
+ *  their order wnet through successfully.
  * 
  */
 
-/**
- * includes environment variables
+
+/** 
+ * contains general variables and baseURL variables
+ * to help ease site navigation linking.
  */
-include ('includes/config.inc.php');
+include 'includes/setup.inc.php';
+
+
+/* 
+*   variables to connect to sulley servers
+*   to grab database items.
+*/
+include 'includes/config.inc.php';
+
 
 /**
- * local file variables
+ * after database connect we can run a query for the page
+ */
+
+// mysql db connection
+$mysqli = mysqli_connect($db_servername, $db_username, $db_password, $db_name);
+
+// conditional, output an error message if cannot connect to 
+// database.
+if (mysqli_connect_errno()) {
+  // print error message using error css classes
+  echo '<div class="alert alert-error">Failed to connect to mysql: ' . mysqli_connect_error() . '</div>';
+  // exit out of php code.
+  exit();
+}
+
+
+
+/**
+ * local page variables
  */
 $page_title = 'Fullfillment';
 
-
 /**
- * base head .html
+ * grab header html part
  */
 include ('includes/head.inc.php');
-
 
 ?>
 
@@ -52,4 +77,13 @@ include ('includes/head.inc.php');
   
 <?php  
 
+/**
+ * close connection
+ */
+mysqli_close($mysqli);
+
+
+/**
+ * add footer html
+ */
 include ('includes/footer.inc.php');
